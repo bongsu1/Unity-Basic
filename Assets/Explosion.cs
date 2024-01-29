@@ -6,15 +6,17 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    public GameObject explosionPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8400599007907931187}
   - component: {fileID: 8572153959922407849}
   - component: {fileID: 678550430778593914}
+  - component: {fileID: 8230900002831050633}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -135,3 +136,16 @@ CapsuleCollider:
   m_Height: 0.3115456
   m_Direction: 2
   m_Center: {x: 0.057793602, y: 0, z: 0.62989295}
+--- !u!114 &8230900002831050633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400599007910132467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601333130d297494696532b94fd1932f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 8111019098043797770, guid: 6c9b0571d3a4b5546a82d7a86b6973b9, type: 3}
