@@ -18,8 +18,6 @@ public class Homework : MonoBehaviour
             dir.x *= -1;
         }
         moveDir.x = dir.x;
-
-        transform.rotation = value.Get<Quaternion>();
     }
 
     private void Move()
