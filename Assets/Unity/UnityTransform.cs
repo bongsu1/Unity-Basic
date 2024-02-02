@@ -105,11 +105,19 @@ public class UnityTransform : MonoBehaviour
     // 보통의 경우 쿼터니언 -> 오일러각도 -> 연산진행 -> 결과오일러각도 -> 결과쿼터니언 과 같이 연산의 결과 쿼터니언을 사용함
     private void Rotation()
     {
-        // 트랜스폼의 회전값은 Euler각도 표현이 아닌 Quaternion을 사용함
         transform.rotation = Quaternion.identity;
+
+        // 트랜스폼의 회전값은 Euler각도 표현이 아닌 Quaternion을 사용함
+        Quaternion rotation = transform.rotation;
+
+        /*Vector3 euler1 = rotation.eulerAngles;
+        euler1 += new Vector3(10, 10, 10);
+        transform.rotation = Quaternion.Euler(euler1);*/
 
         // Euler각도를 Quaternion으로 변환
         transform.rotation = Quaternion.Euler(0, 90, 0);
-        Vector3 rotation = transform.rotation.eulerAngles;
+
+        // Quaternion각도를 Euler각도로 변환
+        Vector3 euler = transform.rotation.eulerAngles;
     }
 }
