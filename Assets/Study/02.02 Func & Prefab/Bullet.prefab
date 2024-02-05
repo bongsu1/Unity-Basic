@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -134,3 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 4546655268980388250}
   force: 10
+  explosion: {fileID: 0}
+  explosionEffect: {fileID: 5641953307369498131, guid: 0378e92261b7db94f837eec668573161, type: 3}
