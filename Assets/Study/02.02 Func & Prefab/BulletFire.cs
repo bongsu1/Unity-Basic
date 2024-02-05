@@ -10,7 +10,6 @@ public class BulletFire : MonoBehaviour
     [SerializeField] float bulletForce;
     
 
-    float chargedTime;
     Coroutine charge;
 
     void OnFire(InputValue value)
@@ -18,7 +17,7 @@ public class BulletFire : MonoBehaviour
         
         if (value.isPressed)
         {
-            chargedTime = 0f;
+            bulletForce = 0f;
             charge = StartCoroutine(Charge());
         }
         else
@@ -31,14 +30,14 @@ public class BulletFire : MonoBehaviour
     void Fire() 
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.force = bulletForce + chargedTime;
+        bullet.force = bulletForce;
     }
 
     IEnumerator Charge()
     {
         while (true)
         {
-            chargedTime += Time.deltaTime * 10;
+            bulletForce += Time.deltaTime * 10;
             yield return new WaitForSeconds(Time.deltaTime);
         }
     }
