@@ -99,6 +99,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "abe454d5-d921-4155-93d5-54014ab902bb",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "KeyBoard",
                     "id": "553ba627-128d-43bc-a8e1-632cbfbcf335",
                     "path": "2DVector",

@@ -9,6 +9,7 @@ public class BulletFire : MonoBehaviour
     [SerializeField] Bullet bulletPrefab;
     [SerializeField] float bulletForce;
     public AudioSource shootSound;
+    public Animator animator;
 
     Coroutine charge;
 
@@ -27,11 +28,12 @@ public class BulletFire : MonoBehaviour
         }
     }
 
-    void Fire() 
+    public void Fire() 
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.force = bulletForce;
+        bullet.force = bulletForce < 5f ? 10f : bulletForce;
         shootSound.Play();
+        animator.SetTrigger("Fire");
     }
 
     IEnumerator Charge()

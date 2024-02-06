@@ -16,7 +16,7 @@ public class TankMove : MonoBehaviour
     {
         Vector2 vec2 = value.Get<Vector2>();
         moveDir.z = vec2.y;
-        moveDir.x = vec2.x;
+        moveDir.x = vec2.y < 0 ? -vec2.x : vec2.x;
     }
 
     void FixedUpdate()
