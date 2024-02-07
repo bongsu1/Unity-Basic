@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class BulletFire : MonoBehaviour
@@ -8,8 +9,9 @@ public class BulletFire : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] Bullet bulletPrefab;
     [SerializeField] float bulletForce;
-    public AudioSource shootSound;
-    public Animator animator;
+
+    public UnityEvent OnFired;
+    public UnityEvent OnFiring;
 
     Coroutine charge;
 
@@ -30,10 +32,13 @@ public class BulletFire : MonoBehaviour
 
     public void Fire() 
     {
+        OnFiring?.Invoke();
+
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.force = bulletForce < 5f ? 10f : bulletForce;
-        shootSound.Play();
-        animator.SetTrigger("Fire");
+        Manager2.Data.ChargedPower = bulletForce;
+
+        OnFired?.Invoke();
     }
 
     IEnumerator Charge()
